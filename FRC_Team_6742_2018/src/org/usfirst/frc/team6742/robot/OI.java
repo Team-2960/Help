@@ -7,11 +7,32 @@
 
 package org.usfirst.frc.team6742.robot;
 
+
+
+import org.usfirst.frc.team6742.robot.subsystems.drivetrain;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
+
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	
+	public void driveRobot(drivetrain drivetrain, Joystick stick) {
+		drivetrain.getDrive().tankDrive(stick.getRawAxis(0), stick.getRawAxis(1));
+		
+		/*
+		 * Examples below to run other subsystems
+		 */
+		// https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599739-running-commands-on-joystick-input
+	}
+	
+	
+	
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
